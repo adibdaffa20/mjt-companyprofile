@@ -1,4 +1,4 @@
-#projects {
+#portfolio {
   background-color: $white-color;
   color: $dark-blue-text;
   margin-top: -10rem;
@@ -50,7 +50,7 @@
     }
 
     &__image {
-      width: 90%;
+      width: 80%;
       margin: 0 auto;
 
       @include respond(tab-land) {

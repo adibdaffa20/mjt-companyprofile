@@ -1,0 +1,136 @@
+.navbar {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-logo {
+    max-height: 275px; /* Ukuran logo disesuaikan */
+    max-width: 230px;
+    margin-right: 1rem; /* Margin logo disesuaikan */
+    position: absolute;
+  }
+
+  .menu-toggle {
+    display: none; /* Menu toggle disembunyikan secara default */
+  }
+
+  .navbar-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    .navbar-item {
+      margin: 0 1.5rem; /* Margin menu item disesuaikan */
+
+      .navbar-link {
+        color: #2E3094;
+        text-decoration: none;
+        font-size: 1.5rem; /* Ukuran teks menu diperbesar */
+        font-weight: 600;
+        position: relative;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+          color: #61dafb;
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          width: 0;
+          height: 2px;
+          background: #61dafb;
+          transition: width 0.3s ease-in-out;
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .navbar-menu {
+      display: none; /* Sembunyikan navbar menu pada handphone */
+      position: absolute;
+      top: 60px; /* Sesuaikan dengan tinggi navbar */
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem 0;
+      z-index: 999;
+
+      &.open {
+        display: flex; /* Tampilkan menu saat kelas 'open' ditambahkan */
+      }
+
+      .navbar-item {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+
+        .navbar-link {
+          font-size: 1.5rem; /* Ukuran teks menu pada handphone */
+          margin: 1rem 0;
+        }
+      }
+    }
+
+    .menu-toggle {
+      display: block; /* Tampilkan tombol menu pada handphone */
+      margin-right: 1rem; /* Sesuaikan margin dengan kebutuhan desain */
+    }
+
+    .menu-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      .menu-text {
+        margin-right: 5px;
+        font-size: 1.5rem; /* Ukuran teks tombol menu pada handphone */
+        color: #4C3BCF; /* Warna teks tombol menu pada handphone */
+      }
+
+      .menu-icon {
+        font-size: 2rem; /* Ukuran ikon tombol menu pada handphone */
+        color: #4C3BCF; /* Warna ikon tombol menu pada handphone */
+      }
+    }
+
+    .menu-button:focus {
+      outline: none;
+    }
+
+    .menu-button[aria-expanded="true"] .menu-icon {
+      transform: rotate(90deg); /* Mengubah ikon saat menu terbuka */
+    }
+
+    .menu-button[aria-expanded="true"] + .navbar-menu {
+      display: flex; /* Tampilkan menu saat tombol ditekan */
+    }
+  }
+}
