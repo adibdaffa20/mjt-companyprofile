@@ -46,8 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
   observer.observe(document.querySelector('#clients'));
 });
 
-
-
 // Close navbar menu when a navbar link is clicked
 const navbarLinks = document.querySelectorAll('.navbar-link');
 
