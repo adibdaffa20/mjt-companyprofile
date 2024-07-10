@@ -1,0 +1,52 @@
+#clients {
+    background-image: linear-gradient(
+    135deg,
+    $primary-color 0%,
+    $secondary-color 100%
+    );
+    -webkit-clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 15vh, 100% 0, 100% 100%, 0 100%);
+    padding: 15rem 0 10rem 0;
+    margin-top: -10rem;
+    margin-bottom: -1px;
+    color: white;
+    text-align: center;
+  
+    @media (max-width: 1200px) {
+      padding: 10rem 0;
+      clip-path: none;
+      -webkit-clip-path: none;
+      margin-top: 0;
+    }
+  
+    .container {
+      margin-top: 3.2rem;
+      padding: 0 2rem;
+      backface-visibility: hidden;
+    }
+  
+    .section-title {
+      font-size: 2.4rem;
+      margin-bottom: 2.5rem;
+  
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+  
+    .marquee {
+      font-size: 3rem;
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+      }
+      @media (max-width: 576px) {
+        font-size: 2rem;
+      }
+    }
+  
+    #counter {
+      display: inline-block;
+      min-width: 4rem;
+    }
+  }
+  

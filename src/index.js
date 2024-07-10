@@ -15,6 +15,27 @@ menuButton.addEventListener('click', () => {
   navbarMenu.classList.toggle('open');
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const counter = document.getElementById('counter');
+  let count = 0;
+  const target = 100;
+  const duration = 2000; // Durasi animasi dalam milidetik
+  const interval = duration / target; // Interval waktu antara setiap increment
+
+  function updateCounter() {
+    if (count < target) {
+      count++;
+      counter.innerText = count;
+      setTimeout(updateCounter, interval);
+    } else {
+      counter.innerText = "100+";
+    }
+  }
+
+  updateCounter();
+});
+
+
 // Close navbar menu when a navbar link is clicked
 const navbarLinks = document.querySelectorAll('.navbar-link');
 
