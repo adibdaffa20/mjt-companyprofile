@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const target = 100;
   const duration = 2000; // Durasi animasi dalam milidetik
   const interval = duration / target; // Interval waktu antara setiap increment
+  let observer;
 
   function updateCounter() {
     if (count < target) {
@@ -32,8 +33,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  updateCounter();
+  function handleIntersection(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        updateCounter();
+        observer.disconnect(); // Stop observing after the animation starts
+      }
+    });
+  }
+
+  observer = new IntersectionObserver(handleIntersection);
+  observer.observe(document.querySelector('#clients'));
 });
+
 
 
 // Close navbar menu when a navbar link is clicked
